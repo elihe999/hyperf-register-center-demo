@@ -26,14 +26,23 @@ return [
             'listener_config' => [
                 // dataId, group, tenant, type, content
                 'nacos_config' => [
-                    'tenant' => 'tenant', // corresponding with service.namespaceId
-                    'data_id' => 'hyperf-service-config',
+                    'tenant' => 'public', // corresponding with service.namespaceId
+                    'data_id' => 'text_test',
                     'group' => 'DEFAULT_GROUP',
                 ],
-                'nacos_config.data' => [
-                    'data_id' => 'hyperf-service-config-yml',
+                'nacos_config.text_test' => [
+                    'data_id' => 'text_test',
                     'group' => 'DEFAULT_GROUP',
-                    'type' => 'yml',
+                    'type' => 'txt',
+                ],
+            ],
+            'client' => [
+                'host' => env('NACOS_HOST', '127.0.0.1'),
+                'port' => env('NACOS_PORT', 8848),
+                'username' => env('NACOS_USERNAME', 'test'),
+                'password' => env('NACOS_PASSWORD', '123456'),
+                'guzzle' => [
+                    'config' => null,
                 ],
             ],
         ],

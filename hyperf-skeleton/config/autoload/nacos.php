@@ -1,6 +1,9 @@
 <?php
 
 declare(strict_types=1);
+
+use function Hyperf\Support\env;
+
 /**
  * This file is part of Hyperf.
  *
@@ -16,8 +19,8 @@ return [
     'host' => '127.0.0.1',
     'port' => 8848,
     // The nacos account info
-    'username' => null,
-    'password' => null,
+    'username' => env('NACOS_USERNAME'),
+    'password' => env('NACOS_PASSWORD'),
     'guzzle' => [
         'config' => null,
     ],
